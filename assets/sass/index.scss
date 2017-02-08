@@ -1,0 +1,79 @@
+.status-message {
+	border: 1px solid #c00;
+	background: #fac7c7;
+	padding: 10px;
+}
+
+.outerwrapper {
+	width: 100%;
+	position: relative;
+	border: 1px solid #c8c7cf;
+
+	h1,h2,h3,p,ul {
+		padding: 10px 10px 0 10px;
+		margin: 0;
+		hyphens: auto;
+	}
+
+	/* ---------------------------------------------------------
+	   SVG styles
+	   ---------------------------------------------------------*/
+	svg {
+		font-size: 12px;
+		max-width: 100%;
+		vector-effect: non-scaling-stroke;
+	}
+	.info, .label {
+		pointer-events: none;
+	}
+	.info text {
+		fill: white;
+	}
+
+	#circle circle {
+		fill: none;
+		pointer-events: all;
+	}
+	text {
+		cursor: default;
+		fill: #333;
+	}
+	.group-arc + text {
+		-webkit-transition: opacity 0.4s;
+		-moz-transition: opacity 0.4s;
+		-o-transition: opacity 0.4s;
+		transition: opacity 0.4s;
+	}
+	.group-arc.animate + text {
+		opacity: 0;
+	}
+	#circle path {
+		-webkit-transition: opacity 0.4s;
+		-moz-transition: opacity 0.4s;
+		-o-transition: opacity 0.4s;
+		transition: opacity 0.4s;
+	}
+	#circle:hover path.fade,
+	#circle path.unselected {
+		opacity: 0;
+		pointer-events: none;
+	}
+	text.fade {
+		opacity: 0;
+	}
+	.group-arc {
+		cursor: pointer;
+	}
+	text.region {
+		font-family: 'CartoGothic', Arial, sans-serif;
+		font-size: 14px;
+	}
+	.chord {
+		opacity: 0.75;
+	}
+	.chord:hover {
+		opacity: 1;
+	}
+
+
+}

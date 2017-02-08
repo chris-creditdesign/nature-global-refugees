@@ -1,0 +1,29 @@
+{
+  "name": "nature-global-refugees",
+  "version": "1.0.0",
+  "description": "http://www.global-refugees.info/ adapted for nature.com/new",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@naturenews + Nikola Sander",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
+    "browserify": "^3.46.1",
+    "circular-migration-plot": "^1.2.0",
+    "d3": "^3.4.2",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.1",
+    "pump": "^1.0.2",
+    "run-sequence": "^1.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  }
+}
