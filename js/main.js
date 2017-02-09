@@ -16,36 +16,22 @@ var data = require('../data/refugee-data-nature.json');
 
 module.exports = function(options) {
 
-  if (!options.chart) {
-    throw('I need a chart node!');
-  }
+	if (!options.chart) {
+		throw('I need a chart node!');
+	}
 
-  if (typeof options.chart === 'string') {
-    options.chart = {
-      element: options.chart
-    };
-  }
-  if (typeof options.timeline === 'string') {
-    options.timeline = {
-      element: options.timeline
-    };
-  }
+	if (typeof options.chart === 'string') {
+		options.chart = {
+			element: options.chart
+		};
+	}
 
-  var c = chart(data, options.chart);
-  // timeline(c, options.timeline);
-  c.draw();
-  
+	var c = chart(data, options.chart);
+	c.draw();
 };
 
 },{"../data/refugee-data-nature.json":1,"./lib/chart":4,"./lib/timeline":8,"d3":9}],3:[function(require,module,exports){
 var CircularMigrationPlot = require('./circular-migration-plot.js');
-
-// Just want to show refugees
-var labels = {
-	2015: 'migrants',
-	2016: 'refugees',
-	2017: 'asylum applicants',
-};
 
 CircularMigrationPlot({
 	chart: {
@@ -56,13 +42,9 @@ CircularMigrationPlot({
 			colors: ['#FF0000','#ED8E00','#00B500','#683F91','#A1007E','#1F57A6','#11B2ED','#07E0CB','#638282','#FFDD00']
 			},
 		width: 630,
-		height: 630
-	},
-	timeline: {
-		element: '#timeline',
-			formatter: function(d) {
-			return labels[d]
-		}
+		height: 630,
+		margin: 100,
+		maxRegionsOpen: 1
 	}
 });
 },{"./circular-migration-plot.js":2}],4:[function(require,module,exports){
@@ -543,7 +525,7 @@ module.exports = function(data, config) {
       .append("g")
       .attr('class', 'label');
     groupTextGroup
-      .filter(function(d) {return d.id !== d.region})
+      // .filter(function(d) {return d.id !== d.region})
       .transition()
       .duration(config.animationDuration)
       .attrTween("transform", function(d) {
@@ -587,19 +569,23 @@ module.exports = function(data, config) {
         return d.id === d.region;
       })
       .text(function(d) { 
-        if (d.id !== d.region) {
-          return data.names[d.id];
-        } 
+        /* if (d.id !== d.region) {
+           return data.names[d.id];
+         }*/ 
+        return data.names[d.id];
       })
       .attr('transform', function(d) {
-        if (d.id !== d.region) {
-          return d.angle > Math.PI ? 'translate(0, -4) rotate(180)' : 'translate(0, 4)';
-        }
+        /* if (d.id !== d.region) {
+           return d.angle > Math.PI ? 'translate(0, -4) rotate(180)' : 'translate(0, 4)';
+         }*/
+        return d.angle > Math.PI ? 'translate(0, -4) rotate(180)' : 'translate(0, 4)';
       })
       .attr('text-anchor', function(d) {
-        return d.id === d.region ?
-          'middle' :
-          (d.angle > Math.PI ? 'end' : 'start');
+        /* return d.id === d.region ?
+           'middle' :
+           (d.angle > Math.PI ? 'end' : 'start');*/
+        return d.angle > Math.PI ? 'end' : 'start';
+
       })
       .style('fill', function(d) {
         return d.id === d.region ? arcColor(d) : null;
@@ -609,8 +595,11 @@ module.exports = function(data, config) {
         return d.value < config.mylayout.labelThreshold;
       });
 
+    // Commented out so that the region label
+    // stick out from the graphic i.e. not on a path
+
     // path for text-on-path
-    var groupTextPathPath = group
+    /*var groupTextPathPath = group
       .filter(function(d) {return d.id === d.region})
       .selectAll('.group-textpath-arc')
       .data(function(d) { return [d]; });
@@ -634,10 +623,10 @@ module.exports = function(data, config) {
           };
         }
       });
-    groupTextPathPath.exit().remove();
+    groupTextPathPath.exit().remove();*/
 
     // text on path
-    var groupTextPath = groupText
+    /*var groupTextPath = groupText
       .filter(function(d) {return d.id === d.region})
       .selectAll('textPath')
       .data(function(d) { return [d]; });
@@ -660,7 +649,7 @@ module.exports = function(data, config) {
       .filter(function(d, i) {
         return this.getComputedTextLength() > (d.endAngle - d.startAngle) * (config.outerRadius + 18);
       })
-      .remove();
+      .remove();*/
 
 
 
