@@ -4,11 +4,11 @@ Interactive graphic for @naturenews
 
 [Circular migration plot](http://www.global-refugees.info/) adapted for nature.com/news
 
-# Collect and compile data
+## Collect and compile data
 
 	sh compile-data.sh
 
-You will need [csvkit](https://csvkit.readthedocs.io/en/749/) and [circular-migration-plot](https://github.com/null2/circular-migration-plot)
+You will need [csvkit](https://csvkit.readthedocs.io/en/749/) and [circular-migration-plot](https://github.com/null2/circular-migration-plot).
 
 ## Build and serve
 
