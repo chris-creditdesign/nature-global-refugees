@@ -12,23 +12,16 @@ var data = require('../data/refugee-data-nature.json');
 
 module.exports = function(options) {
 
-  if (!options.chart) {
-    throw('I need a chart node!');
-  }
+	if (!options.chart) {
+		throw('I need a chart node!');
+	}
 
-  if (typeof options.chart === 'string') {
-    options.chart = {
-      element: options.chart
-    };
-  }
-  if (typeof options.timeline === 'string') {
-    options.timeline = {
-      element: options.timeline
-    };
-  }
+	if (typeof options.chart === 'string') {
+		options.chart = {
+			element: options.chart
+		};
+	}
 
-  var c = chart(data, options.chart);
-  // timeline(c, options.timeline);
-  c.draw();
-  
+	var c = chart(data, options.chart);
+	c.draw();
 };

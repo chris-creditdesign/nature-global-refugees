@@ -475,7 +475,7 @@ module.exports = function(data, config) {
       .append("g")
       .attr('class', 'label');
     groupTextGroup
-      .filter(function(d) {return d.id !== d.region})
+      // .filter(function(d) {return d.id !== d.region})
       .transition()
       .duration(config.animationDuration)
       .attrTween("transform", function(d) {
@@ -519,19 +519,23 @@ module.exports = function(data, config) {
         return d.id === d.region;
       })
       .text(function(d) { 
-        if (d.id !== d.region) {
-          return data.names[d.id];
-        } 
+        /* if (d.id !== d.region) {
+           return data.names[d.id];
+         }*/ 
+        return data.names[d.id];
       })
       .attr('transform', function(d) {
-        if (d.id !== d.region) {
-          return d.angle > Math.PI ? 'translate(0, -4) rotate(180)' : 'translate(0, 4)';
-        }
+        /* if (d.id !== d.region) {
+           return d.angle > Math.PI ? 'translate(0, -4) rotate(180)' : 'translate(0, 4)';
+         }*/
+        return d.angle > Math.PI ? 'translate(0, -4) rotate(180)' : 'translate(0, 4)';
       })
       .attr('text-anchor', function(d) {
-        return d.id === d.region ?
-          'middle' :
-          (d.angle > Math.PI ? 'end' : 'start');
+        /* return d.id === d.region ?
+           'middle' :
+           (d.angle > Math.PI ? 'end' : 'start');*/
+        return d.angle > Math.PI ? 'end' : 'start';
+
       })
       .style('fill', function(d) {
         return d.id === d.region ? arcColor(d) : null;
@@ -541,8 +545,11 @@ module.exports = function(data, config) {
         return d.value < config.mylayout.labelThreshold;
       });
 
+    // Commented out so that the region label
+    // stick out from the graphic i.e. not on a path
+
     // path for text-on-path
-    var groupTextPathPath = group
+    /*var groupTextPathPath = group
       .filter(function(d) {return d.id === d.region})
       .selectAll('.group-textpath-arc')
       .data(function(d) { return [d]; });
@@ -566,10 +573,10 @@ module.exports = function(data, config) {
           };
         }
       });
-    groupTextPathPath.exit().remove();
+    groupTextPathPath.exit().remove();*/
 
     // text on path
-    var groupTextPath = groupText
+    /*var groupTextPath = groupText
       .filter(function(d) {return d.id === d.region})
       .selectAll('textPath')
       .data(function(d) { return [d]; });
@@ -592,7 +599,7 @@ module.exports = function(data, config) {
       .filter(function(d, i) {
         return this.getComputedTextLength() > (d.endAngle - d.startAngle) * (config.outerRadius + 18);
       })
-      .remove();
+      .remove();*/
 
 
 
