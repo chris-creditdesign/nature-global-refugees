@@ -1,5 +1,11 @@
 var CircularMigrationPlot = require('./circular-migration-plot.js');
 
+ var labels = {
+	2015: 'migrants (in 100s)',
+	2016: 'refugees',
+	2017: 'asylum applicants',
+}
+
 CircularMigrationPlot({
 	chart: {
 		element: '#chart',
@@ -22,5 +28,11 @@ CircularMigrationPlot({
 		height: 630,
 		margin: 100,
 		maxRegionsOpen: 1
+	},
+	timeline: {
+		element: '#timeline',
+		formatter: function(d) {
+			return labels[d];
+		}
 	}
 });

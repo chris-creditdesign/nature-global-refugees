@@ -8,7 +8,7 @@
 var d3 = require('d3');
 var chart = require('./lib/chart');
 var timeline = require('./lib/timeline');
-var data = require('../data/refugee-data-nature.json');
+var data = require('../data/refugee-data100.json');
 
 module.exports = function(options) {
 
@@ -22,6 +22,14 @@ module.exports = function(options) {
 		};
 	}
 
+	if (typeof options.timeline === 'string') {
+		options.timeline = {
+			element: options.timeline
+		};
+	}
+
+
 	var c = chart(data, options.chart);
+	timeline(c, options.timeline);
 	c.draw();
 };

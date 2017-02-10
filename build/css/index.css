@@ -21,6 +21,18 @@
           hyphens: auto;
 }
 
+.outerwrapper span.year {
+  margin-right: 20px;
+}
+
+.outerwrapper input {
+  margin-right: 5px;
+}
+
+.outerwrapper form {
+  margin-left: 10px;
+}
+
 .outerwrapper svg {
   font-size: 12px;
   max-width: 100%;
