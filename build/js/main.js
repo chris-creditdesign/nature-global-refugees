@@ -16843,7 +16843,8 @@ var colors = [	'#FF0000',
 				'#11B2ED',
 				'#07E0CB',
 				'#638282',
-				'#FF7F00'
+				'#FF7F00',
+				'#5A527E'
 			];
 
 var chartSmall = {
