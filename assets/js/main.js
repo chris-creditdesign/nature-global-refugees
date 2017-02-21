@@ -19,7 +19,7 @@ var chartSmall = {
 		element: '#chart',
 		mylayout: {
 			threshold: 2000,
-			labelThreshold: 5000,
+			labelThreshold: 100000,
 			colors: colors
 		},
 		width: 630,
@@ -33,7 +33,7 @@ var chartLarge = {
 		element: '#chart',
 		mylayout: {
 			threshold: 2000,
-			labelThreshold: 5000,
+			labelThreshold: 30000,
 			colors: colors
 			},
 		maxRegionsOpen: 1
@@ -44,8 +44,6 @@ var chartLarge = {
 CircularMigrationPlot({
 	chart: chartSmall
 });
-
-console.log(CircularMigrationPlot);
 
 d3.select(".expand-widget").on("click", function() {
 	outerWrapper.classed("expanded-widget", true)
