@@ -32,4 +32,5 @@ module.exports = function(options) {
 	var c = chart(data, options.chart);
 	// timeline(c, options.timeline);
 	c.draw();
+
 };
