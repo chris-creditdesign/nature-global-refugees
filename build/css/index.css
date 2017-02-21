@@ -37,6 +37,7 @@
   font-size: 12px;
   max-width: 100%;
   vector-effect: non-scaling-stroke;
+  margin-top: 40px;
 }
 
 .outerwrapper .info, .outerwrapper .label {
@@ -86,7 +87,6 @@
 }
 
 .outerwrapper text.region {
-  font-family: 'CartoGothic', Arial, sans-serif;
   font-size: 14px;
 }
 

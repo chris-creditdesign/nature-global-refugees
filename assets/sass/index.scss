@@ -35,6 +35,7 @@
 		font-size: 12px;
 		max-width: 100%;
 		vector-effect: non-scaling-stroke;
+		margin-top: 40px;
 	}
 	.info, .label {
 		pointer-events: none;
@@ -52,18 +53,12 @@
 		fill: #333;
 	}
 	.group-arc + text {
-		-webkit-transition: opacity 0.4s;
-		-moz-transition: opacity 0.4s;
-		-o-transition: opacity 0.4s;
 		transition: opacity 0.4s;
 	}
 	.group-arc.animate + text {
 		opacity: 0;
 	}
 	#circle path {
-		-webkit-transition: opacity 0.4s;
-		-moz-transition: opacity 0.4s;
-		-o-transition: opacity 0.4s;
 		transition: opacity 0.4s;
 	}
 	#circle:hover path.fade,
@@ -78,7 +73,6 @@
 		cursor: pointer;
 	}
 	text.region {
-		font-family: 'CartoGothic', Arial, sans-serif;
 		font-size: 14px;
 	}
 	.chord {
