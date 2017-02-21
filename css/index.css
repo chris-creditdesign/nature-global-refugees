@@ -25,8 +25,9 @@
 }
 
 .outerwrapper .chart {
-  margin: 40px;
+  margin: 15px;
   background-color: #fff;
+  text-align: center;
 }
 
 .outerwrapper svg {
@@ -94,14 +95,15 @@
 }
 
 .outerwrapper .widget-expand-controls {
-  padding: 0 1% 1%;
+  padding: 0 15px 1%;
   display: block;
   text-align: right;
 }
 
 .outerwrapper .widget-close-controls {
-  padding: 0 1% 1%;
+  padding: 0 15px 0;
   margin-top: 30px;
+  text-align: right;
   display: none;
 }
 
@@ -115,7 +117,6 @@
 
 .outerwrapper .close-widget {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAATCAMAAABBexbDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWVQTFRF5OTk6urq+fn539/f3NzcEBET6+vr+vr6ERIUEhMV3t7e9vb27u7u9/f39fX14ODg4eHh7Ozs8fHx+Pj4Dg8RExMT7+/v+/v76enp9PT0ExQW2OLh/Pz88/Pz5eXl6Ojo29vbX19f/f39X2Bi8vLy6+zuEhIS5+fnv7+/ysrK4+HiZ2dn4uLiEhIUDxASjpCP8PDy5OLllpaW19fXERETzc3NFxUWvLy87e/u087ShISE2uPiFhYWGRQYHh8hHB4dnJ2f7e3tZ2hq5eXj5eTil5eXDxEQVE9TIB4fICAgHiAf1dXXlJSWy8vLmZqcY2RmmJmbERMSmZmbubm57OzuoKKhYVxg/Pr7vr6+1tbYxsbIxsbGFRUVwsLC////mpudLS0vU11c6+3s19nYlZWV8vTzDw8PHBweZGVng4ODHh4g8PDwWVtaZmZoZmZmQ01Mh4eHh4mIERER1dfWFBQU0dHRAAAA/4OSIgAAAHd0Uk5T/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wCpn6RlAAAA/ElEQVR42nTQ1W7EMBQEUDuOw7zBZWYoM3e3zMzMzN9fp6BKVXul+3KeZga8/T7wtxw0UHIvqc0MfMuIxIbDrOM4RzefcketywGWovwv+TIIFS/QHpHlWVERmSkiNc9TSmerp0OVWzGSrhE5vk5vtWHugsPVbcN4JtJlS01zQZM3+X3bNhgiUB9eyaR4zM1ndIaRiOixHFzicTVoLrgwB4kU3NiGNbaYwlwlH3ULRB4AiCayJ6DlKVEfBY9ErqabNbAMtHJnuVjcPPczH4YEpAqqSqPe0P1Hi/7xV4FGcRrR3WtfTTsmL3db6Xi+Z+JnH8vqe9nJ/rfYuwADALkvVW0BiEYuAAAAAElFTkSuQmCC) no-repeat 100% 50%;
-  float: right;
   padding: 5px 20px 5px 0;
   border: none;
   color: #bbb;

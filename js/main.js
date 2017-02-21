@@ -16850,7 +16850,7 @@ var chartSmall = {
 		element: '#chart',
 		mylayout: {
 			threshold: 2000,
-			labelThreshold: 5000,
+			labelThreshold: 100000,
 			colors: colors
 		},
 		width: 630,
@@ -16864,7 +16864,7 @@ var chartLarge = {
 		element: '#chart',
 		mylayout: {
 			threshold: 2000,
-			labelThreshold: 5000,
+			labelThreshold: 30000,
 			colors: colors
 			},
 		maxRegionsOpen: 1
@@ -16875,8 +16875,6 @@ var chartLarge = {
 CircularMigrationPlot({
 	chart: chartSmall
 });
-
-console.log(CircularMigrationPlot);
 
 d3.select(".expand-widget").on("click", function() {
 	outerWrapper.classed("expanded-widget", true)
@@ -16916,6 +16914,8 @@ var chord = require('./chord');
 
 var π = Math.PI;
 
+var maxHeightWidth = 1100;
+
 module.exports = function(data, config) {
   data = data || { regions: [], names: [], matrix: [] };
 
@@ -16925,8 +16925,8 @@ module.exports = function(data, config) {
   config.now = config.now || Object.keys(data.matrix)[0];
 
   // geometry
-  config.width = config.width || 1100;
-  config.height = config.height || 1100;
+  config.width = config.width || maxHeightWidth;
+  config.height = config.height || maxHeightWidth;
   config.margin = config.margin || 125;
   config.outerRadius = config.outerRadius || (Math.min(config.width, config.height) / 2 - config.margin);
   config.arcWidth = config.arcWidth || 24;
@@ -17057,8 +17057,9 @@ module.exports = function(data, config) {
   d3.select(window).on('resize.svg-resize', function() {
     var width = svg.node().parentNode.clientWidth;
 
-    if (width) {
-      svg.attr('height', width);
+    if (width <= maxHeightWidth) {
+      svg.attr('height', width)
+        .attr('width', width);
     }
   });
 
