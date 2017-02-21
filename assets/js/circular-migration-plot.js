@@ -7,8 +7,8 @@
 
 var d3 = require('d3');
 var chart = require('./lib/chart');
-var timeline = require('./lib/timeline');
-var data = require('../data/refugee-data100.json');
+// var timeline = require('./lib/timeline');
+var data = require('../data/refugee-data-edit.json');
 
 module.exports = function(options) {
 
@@ -30,6 +30,6 @@ module.exports = function(options) {
 
 
 	var c = chart(data, options.chart);
-	timeline(c, options.timeline);
+	// timeline(c, options.timeline);
 	c.draw();
 };
